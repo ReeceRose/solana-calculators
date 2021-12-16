@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="relative z-10 flex flex-wrap items-center justify-between px-6 py-4 bg-gray-100 shadow-xl md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden md:w-64"
+  >
+    <div
+      class="flex flex-wrap items-center justify-between w-full px-0 mx-auto md:flex-col md:items-stretch md:min-h-full md:flex-nowrap"
+    >
+      <button
+        class="px-3 py-1 text-xl leading-none text-black bg-transparent border border-transparent border-solid rounded opacity-50 cursor-pointer md:hidden"
+        type="button"
+      >
+        <i
+          class="fas fa-bars"
+        />
+      </button>
+      <a
+        class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left text-gray-600 uppercase md:block md:pb-2 whitespace-nowrap"
+        href="#"
+      >
+        Solana Calculators
+      </a>
+      <div
+        class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
+      >
+        <div
+          class="block pb-4 mb-4 border-b border-solid md:min-w-full md:hidden border-blueGray-200"
+        >
+          <div
+            class="flex flex-wrap"
+          >
+            <div
+              class="w-6/12"
+            >
+              <a
+                class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left text-gray-600 uppercase md:block md:pb-2 whitespace-nowrap"
+                href="#pablo"
+              >
+                Solana Calculators
+              </a>
+            </div>
+            <div
+              class="flex justify-end w-6/12"
+            >
+              <button
+                class="px-3 py-1 text-xl leading-none text-black bg-transparent border border-transparent border-solid rounded opacity-50 cursor-pointer md:hidden"
+                type="button"
+              >
+                <i
+                  class="fas fa-times"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr
+          class="my-4 md:min-w-full"
+        />
+        <h6
+          class="block pt-1 pb-4 text-xs font-bold text-gray-500 no-underline uppercase md:min-w-full"
+        >
+          Calculators
+        </h6>
+        <ul
+          class="flex flex-col list-none md:flex-col md:min-w-full"
+        >
+          <li
+            class="items-center"
+          >
+            <a
+              class="text-xs uppercase py-3 font-bold block text-gray-700 hover:text-gray-500"
+              href="/calculators/rent-calculator"
+            >
+              <i
+                class="fas fa-calculator mr-2 text-sm text-gray-300"
+              />
+               Rent Calculator
+            </a>
+          </li>
+        </ul>
+        <hr
+          class="my-4 md:min-w-full"
+        />
+        <h6
+          class="block pt-1 pb-4 text-xs font-bold text-gray-500 no-underline uppercase md:min-w-full"
+        >
+          About
+        </h6>
+        <ul
+          class="flex flex-col list-none md:flex-col md:min-w-full"
+        >
+          <li
+            class="items-center"
+          >
+            <a
+              class="text-xs uppercase py-3 font-bold block text-gray-700 hover:text-gray-500"
+              href="https://github.com/reecerose/solana-calculators"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <i
+                class="fab fa-github mr-2 text-sm text-gray-300"
+              />
+               GitHub
+            </a>
+          </li>
+        </ul>
+        <hr
+          class="my-4 md:min-w-full"
+        />
+        <h6
+          class="block pt-1 pb-4 text-xs font-bold text-gray-500 no-underline uppercase md:min-w-full"
+        >
+          Copyright © 2021 
+          <br />
+          <a
+            href="https://github.com/ReeceRose/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Reece Rose
+          </a>
+        </h6>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
