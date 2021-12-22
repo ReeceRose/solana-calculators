@@ -32,7 +32,7 @@ export default function Sidebar(): JSX.Element {
               collapseShow
             }
           >
-            <div className="block pb-4 mb-4 border-b border-solid md:min-w-full md:hidden border-blueGray-200">
+            <div className="block pb-4 mb-4 border-b border-gray-200 border-solid md:min-w-full md:hidden">
               <div className="flex flex-wrap">
                 <div className="w-6/12">
                   <Link href="/">
@@ -57,7 +57,7 @@ export default function Sidebar(): JSX.Element {
             </div>
 
             <hr className="my-4 md:min-w-full" />
-            <h6 className="block pt-1 pb-4 text-xs font-bold text-gray-500 no-underline uppercase md:min-w-full">
+            <h6 className="block pt-1 pb-4 text-xs font-bold text-gray-600 no-underline uppercase md:min-w-full">
               Calculators
             </h6>
 
@@ -71,7 +71,7 @@ export default function Sidebar(): JSX.Element {
                         '/calculators/rent-calculator'
                       ) !== -1
                         ? 'text-blue-500 hover:text-blue-600'
-                        : 'text-gray-700 hover:text-gray-500')
+                        : 'text-gray-600 hover:text-gray-500')
                     }
                   >
                     <i
@@ -81,7 +81,7 @@ export default function Sidebar(): JSX.Element {
                           '/calculators/rent-calculator'
                         ) !== -1
                           ? 'opacity-75'
-                          : 'text-gray-300')
+                          : 'text-gray-600')
                       }
                     ></i>{' '}
                     Rent Calculator
@@ -91,7 +91,7 @@ export default function Sidebar(): JSX.Element {
             </ul>
 
             <hr className="my-4 md:min-w-full" />
-            <h6 className="block pt-1 pb-4 text-xs font-bold text-gray-500 no-underline uppercase md:min-w-full">
+            <h6 className="block pt-1 pb-4 text-xs font-bold text-gray-600 no-underline uppercase md:min-w-full">
               About
             </h6>
 
@@ -102,11 +102,11 @@ export default function Sidebar(): JSX.Element {
                     target="_blank"
                     rel="noreferrer"
                     className={
-                      'text-xs uppercase py-3 font-bold block text-gray-700 hover:text-gray-500'
+                      'text-xs uppercase py-3 font-bold block text-gray-600 hover:text-gray-500'
                     }
                   >
                     <i
-                      className={'fab fa-github mr-2 text-sm text-gray-300'}
+                      className={'fab fa-github mr-2 text-sm text-gray-600'}
                     ></i>{' '}
                     GitHub
                   </a>
@@ -115,7 +115,7 @@ export default function Sidebar(): JSX.Element {
             </ul>
 
             <hr className="my-4 md:min-w-full" />
-            <h6 className="block pt-1 pb-4 text-xs font-bold text-gray-500 no-underline uppercase md:min-w-full">
+            <h6 className="block pt-1 pb-4 text-xs font-bold text-gray-600 no-underline uppercase md:min-w-full">
               Copyright © {new Date().getFullYear()} <br />
               <Link href="https://github.com/ReeceRose/">
                 <a target="_blank" rel="noreferrer">
