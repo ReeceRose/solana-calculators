@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render } from '@testing-library/react';
 
 import SEO from '../../components/SEO';
@@ -33,7 +29,6 @@ test('SEO component metadata content matches passed props', async () => {
   );
 
   expect(document.title).toBe(title);
-
   expect(
     document.querySelector('meta[name="description"]')?.getAttribute('content')
   ).toBe(description);

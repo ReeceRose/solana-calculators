@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render } from '@testing-library/react';
 
 import Sidebar from '../../../components/Sidebar/Sidebar';
@@ -10,7 +6,7 @@ jest.mock('next/router', () => ({
   useRouter() {
     return {
       route: '/',
-      pathname: '',
+      pathname: '/calculators/rent-calculator',
       query: '',
       asPath: '',
       push: jest.fn(),
