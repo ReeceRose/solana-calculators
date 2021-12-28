@@ -1,10 +1,13 @@
 import * as web3 from '@solana/web3.js';
 import { useState } from 'react';
+import Loading from '../Loading/Loading';
 
 export default function RentCalculator() {
+  const [isLoading, setLoading] = useState(false);
   const [kilobytes, setKilobytes] = useState(128);
 
   const getMinimumBalanceForRentExemption = async () => {
+    setLoading(true);
     const connection = new web3.Connection(
       web3.clusterApiUrl('mainnet-beta'),
       'confirmed'
@@ -13,10 +16,12 @@ export default function RentCalculator() {
       kilobytes
     );
     console.log(minimum);
+    setLoading(false);
   };
 
   return (
     <>
+      {isLoading && <Loading />}
       <div className="relative flex flex-col w-full min-w-0 mb-6 break-words border-0 rounded-lg shadow-lg dark:bg-gray-700">
         <div className="px-6 py-6 mb-0 bg-white rounded-t dark:bg-gray-900">
           <div className="flex justify-between text-center">
@@ -30,6 +35,7 @@ export default function RentCalculator() {
             </button>
           </div>
         </div>
+
         <div className="flex-auto px-4 lg:px-10">
           <hr className="my-6 border-gray-800 dark:border-gray-50 border-b-1" />
 
