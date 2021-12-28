@@ -1,23 +1,65 @@
 import * as web3 from '@solana/web3.js';
-import { useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
 
 export default function RentCalculator() {
   const [isLoading, setLoading] = useState(false);
-  const [kilobytes, setKilobytes] = useState(128);
+  const [kilobytes, setKilobytes] = useState(0);
+  const currency = 'USD';
+  // const [currency, setCurrency] = useState('USD');
+  const [solanaPrice, setSolanaPrice] = useState(0);
+  const [cost, setCost] = useState(0);
+  const [solCost, setSolCost] = useState(0);
+  const [currentCurrencyCost, setCurrentCurrencyCost] = useState(0);
 
   const getMinimumBalanceForRentExemption = async () => {
+    if (isNaN(kilobytes)) return;
     setLoading(true);
     const connection = new web3.Connection(
-      web3.clusterApiUrl('mainnet-beta'),
+      web3.clusterApiUrl('devnet'),
       'confirmed'
     );
     const minimum = await connection.getMinimumBalanceForRentExemption(
       kilobytes
     );
-    console.log(minimum);
+    setCost(minimum);
+
+    const solCost = minimum / web3.LAMPORTS_PER_SOL;
+    setSolCost(solCost);
+    setCurrentCurrencyCost(solCost * solanaPrice);
     setLoading(false);
   };
+
+  // TODO: selectable currency
+  const getSolanaPrice = async () => {
+    if (!solanaPrice) {
+      try {
+        const result = await fetch(
+          'https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=' +
+            currency,
+          { method: 'GET' }
+        );
+        const price = JSON.parse(await result.text());
+        const solanaPrice = Number(Object.values(price.solana)[0]);
+        setSolanaPrice(solanaPrice);
+      } catch (_) {
+        setSolanaPrice(0);
+      }
+    }
+  };
+
+  // TODO: allow NaN values for a minute
+  const handleKilobytesInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value);
+    setKilobytes(value || 0);
+  };
+
+  useEffect(() => {
+    const onStart = async () => {
+      getSolanaPrice();
+    };
+    onStart();
+  });
 
   return (
     <>
@@ -45,9 +87,22 @@ export default function RentCalculator() {
               0.00000348 SOL
             </span>
           </h6>
+          <hr className="my-6 border-gray-800 dark:border-gray-50 border-b-1" />
+
+          <h6 className="text-sm font-bold text-gray-600 uppercase dark:text-white">
+            Current Sol price (USD):{' '}
+            <span className="font-extrabold text-gray-700 dark:text-blue-500">
+              {solanaPrice} USD
+            </span>
+          </h6>
         </div>
         <div className="flex-auto px-4 lg:px-10">
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              getMinimumBalanceForRentExemption();
+            }}
+          >
             <hr className="my-6 border-gray-800 dark:border-gray-50 border-b-1" />
             <h6 className="mt-3 mb-6 text-sm font-bold text-gray-600 uppercase dark:text-white">
               Calculator
@@ -65,9 +120,16 @@ export default function RentCalculator() {
                     type="number"
                     className="w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-300 transition-all duration-150 ease-linear bg-white border-0 rounded shadow focus:outline-none focus:ring"
                     value={kilobytes}
-                    onChange={(e) => setKilobytes(parseInt(e.target.value))}
+                    onChange={handleKilobytesInput}
                   />
                 </div>
+                <p className="block mb-2 text-xs font-bold text-gray-600 uppercase dark:text-white">
+                  Approximate cost:
+                  {/* TODO: better UI */}
+                  <br /> {cost} LAMPORTS
+                  <br /> {solCost} SOL
+                  <br /> {currentCurrencyCost} USD
+                </p>
               </div>
             </div>
           </form>
