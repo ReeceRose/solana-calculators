@@ -20,7 +20,7 @@ exports[`Sidebar component matches snapshot 1`] = `
         class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left text-gray-600 uppercase hover:text-gray-500 hover:dark:text-gray-300 dark:text-gray-50 md:block md:pb-2 whitespace-nowrap"
         href="#"
       >
-        Solana Calculators
+        Solana Utilities
       </a>
       <div
         class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
@@ -96,7 +96,7 @@ exports[`Sidebar component matches snapshot 1`] = `
           >
             <a
               class="text-xs uppercase py-3 font-bold block text-gray-600 hover:text-gray-500 dark:text-gray-50 hover:dark:text-gray-300"
-              href="https://github.com/reecerose/solana-calculators"
+              href="https://github.com/reecerose/solana-utilities"
               rel="noreferrer"
               target="_blank"
             >

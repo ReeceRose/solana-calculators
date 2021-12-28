@@ -1,1 +1,1 @@
-# Solana Calculators
+# Solana Utilities

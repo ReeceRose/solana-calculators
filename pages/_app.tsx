@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <SEO
-        title="Solana Calculators"
-        description="Useful calculators for the Solana Ecosystem"
+        title="Solana Utilities"
+        description="Utilities for the Solana Ecosystem"
       />
       <div>
         <Layout>

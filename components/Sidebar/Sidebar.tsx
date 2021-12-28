@@ -22,7 +22,7 @@ export default function Sidebar(): JSX.Element {
               href="#"
               className="inline-block p-4 px-0 mr-0 text-sm font-bold text-left text-gray-600 uppercase hover:text-gray-500 hover:dark:text-gray-300 dark:text-gray-50 md:block md:pb-2 whitespace-nowrap"
             >
-              Solana Calculators
+              Solana Utilities
             </a>
           </Link>
 
@@ -97,7 +97,7 @@ export default function Sidebar(): JSX.Element {
 
             <ul className="flex flex-col list-none md:flex-col md:min-w-full">
               <li className="items-center">
-                <Link href="https://github.com/reecerose/solana-calculators">
+                <Link href="https://github.com/reecerose/solana-utilities">
                   <a
                     target="_blank"
                     rel="noreferrer"
