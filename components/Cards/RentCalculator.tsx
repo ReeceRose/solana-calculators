@@ -3,10 +3,10 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
 
 export default function RentCalculator() {
+  const currency = 'USD';
+
   const [isLoading, setLoading] = useState(false);
   const [kilobytes, setKilobytes] = useState('0');
-  const currency = 'USD';
-  // const [currency, setCurrency] = useState('USD');
   const [solanaPrice, setSolanaPrice] = useState(0);
   const [cost, setCost] = useState(0);
   const [solCost, setSolCost] = useState(0);
@@ -15,8 +15,9 @@ export default function RentCalculator() {
   const getMinimumBalanceForRentExemption = async () => {
     if (kilobytes === '') return;
     setLoading(true);
+    const cluster = process.env.CLUSTER_API || 'devnet';
     const connection = new web3.Connection(
-      web3.clusterApiUrl('devnet'),
+      web3.clusterApiUrl(cluster as web3.Cluster),
       'confirmed'
     );
     const minimum = await connection.getMinimumBalanceForRentExemption(
@@ -30,7 +31,6 @@ export default function RentCalculator() {
     setLoading(false);
   };
 
-  // TODO: selectable currency
   const getSolanaPrice = async () => {
     if (!solanaPrice) {
       try {
