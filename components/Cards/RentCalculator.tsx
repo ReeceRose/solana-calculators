@@ -1,12 +1,17 @@
 import * as web3 from '@solana/web3.js';
+import { useState } from 'react';
 
 export default function RentCalculator() {
+  const [kilobytes, setKilobytes] = useState(128);
+
   const getMinimumBalanceForRentExemption = async () => {
     const connection = new web3.Connection(
       web3.clusterApiUrl('mainnet-beta'),
       'confirmed'
     );
-    const minimum = await connection.getMinimumBalanceForRentExemption(4000);
+    const minimum = await connection.getMinimumBalanceForRentExemption(
+      kilobytes
+    );
     console.log(minimum);
   };
 
@@ -53,7 +58,8 @@ export default function RentCalculator() {
                   <input
                     type="number"
                     className="w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-300 transition-all duration-150 ease-linear bg-white border-0 rounded shadow focus:outline-none focus:ring"
-                    defaultValue={4000}
+                    value={kilobytes}
+                    onChange={(e) => setKilobytes(parseInt(e.target.value))}
                   />
                 </div>
               </div>
