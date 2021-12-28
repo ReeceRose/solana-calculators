@@ -1,4 +1,15 @@
+import * as web3 from '@solana/web3.js';
+
 export default function RentCalculator() {
+  const getMinimumBalanceForRentExemption = async () => {
+    const connection = new web3.Connection(
+      web3.clusterApiUrl('mainnet-beta'),
+      'confirmed'
+    );
+    const minimum = await connection.getMinimumBalanceForRentExemption(4000);
+    console.log(minimum);
+  };
+
   return (
     <>
       <div className="relative flex flex-col w-full min-w-0 mb-6 break-words border-0 rounded-lg shadow-lg dark:bg-gray-700">
@@ -8,6 +19,7 @@ export default function RentCalculator() {
             <button
               className="px-4 py-2 mr-1 text-xs font-bold text-blue-500 uppercase transition-all duration-150 ease-linear bg-gray-100 rounded shadow outline-none dark:text-white dark:bg-gray-500 active:bg-gray-600 hover:shadow-md focus:outline-none"
               type="button"
+              onClick={getMinimumBalanceForRentExemption}
             >
               Calculate
             </button>
