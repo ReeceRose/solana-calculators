@@ -10,7 +10,8 @@ jobs:
     env:
       BASE_PATH: /solana-utilities
       ASSET_PREFIX: /solana-utilities
-
+      SITE_URL: https://reecerose.github.io/solana-utilities/
+      CLUSTER_API: mainnet-beta
   
     strategy:
       matrix:
