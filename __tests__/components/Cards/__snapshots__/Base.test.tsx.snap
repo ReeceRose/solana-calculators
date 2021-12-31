@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base card component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col w-full min-w-0 mb-12 break-words border-0 rounded-lg shadow-lg bg-gray-700"
+  >
+    <div
+      class="px-6 py-6 mb-0 bg-white rounded-t bg-gray-900"
+    >
+      <div
+        class="flex justify-between text-center"
+      >
+        <h6
+          class="text-xl font-bold text-solana-green"
+        >
+          Solana Utilities
+        </h6>
+      </div>
+    </div>
+     
+  </div>
+</DocumentFragment>
+`;

@@ -128,7 +128,7 @@ const RentCalculator: React.FC = () => {
                   {/* TODO: better UI */}
                   <br /> {cost} LAMPORTS
                   <br /> {solCost} SOL
-                  <br /> {currentCurrencyCost} USD
+                  <br /> {Math.round(currentCurrencyCost * 100) / 100} USD
                 </p>
               </div>
             </div>

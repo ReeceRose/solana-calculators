@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculators card component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex-auto px-4 lg:px-10"
+  >
+    <hr
+      class="my-6 border-gray-50 border-b-1"
+    />
+    <h6
+      class="text-sm font-bold uppercase text-gray-50"
+    >
+      Calculators
+    </h6>
+  </div>
+  <div
+    class="flex-auto px-4 mb-6 lg:px-10"
+  >
+    <hr
+      class="my-6 border-gray-50 border-b-1"
+    />
+    <div
+      class="w-full px-4 "
+    >
+      <p
+        class="block mb-2 text-xs font-bold uppercase text-gray-50"
+      >
+        <a
+          class="text-solana-green hover:text-solana-green-hover"
+          href=""
+        >
+          Rent Calculator - 
+          <span
+            class="text-gray-50"
+          >
+             Calculate rent cost
+          </span>
+        </a>
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
