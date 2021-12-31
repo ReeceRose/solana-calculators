@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Sidebar from '../../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar';
 
 jest.mock('next/router', () => ({
   useRouter() {

@@ -1,6 +1,6 @@
 import * as web3 from '@solana/web3.js';
 import { ChangeEvent, useEffect, useState } from 'react';
-import Loading from '../Loading/Loading';
+import Loading from '../LoadingSpinner';
 
 export default function RentCalculator() {
   const currency = 'USD';
