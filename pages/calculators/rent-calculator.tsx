@@ -1,6 +1,6 @@
 import RentCalculatorCard from '../../components/Cards/RentCalculator';
 
-export default function RentCalculator(): JSX.Element {
+const RentCalculator: React.FC = () => {
   return (
     <>
       <div className="flex-grow w-full px-4 mt-12 mb-0">
@@ -12,4 +12,6 @@ export default function RentCalculator(): JSX.Element {
       </div>
     </>
   );
-}
+};
+
+export default RentCalculator;

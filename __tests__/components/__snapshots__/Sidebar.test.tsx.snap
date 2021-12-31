@@ -3,7 +3,7 @@
 exports[`Sidebar component matches snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="relative z-10 flex flex-wrap items-center justify-between px-6 py-4 bg-gray-100 shadow-xl dark:bg-gray-900 md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden md:w-64"
+    class="relative z-10 flex flex-wrap items-center justify-between px-6 py-4 bg-gray-900 shadow-xl md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden md:w-64"
   >
     <div
       class="flex flex-wrap items-center justify-between w-full px-0 mx-auto md:flex-col md:items-stretch md:min-h-full md:flex-nowrap"
@@ -17,8 +17,8 @@ exports[`Sidebar component matches snapshot 1`] = `
         />
       </button>
       <a
-        class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left text-gray-600 uppercase hover:text-gray-500 hover:dark:text-gray-300 dark:text-gray-50 md:block md:pb-2 whitespace-nowrap"
-        href="#"
+        class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left uppercase hover:text-solana-green text-gray-50 md:block md:pb-2 whitespace-nowrap"
+        href="/"
       >
         Solana Utilities
       </a>
@@ -35,8 +35,8 @@ exports[`Sidebar component matches snapshot 1`] = `
               class="w-6/12"
             >
               <a
-                class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left text-gray-600 uppercase hover:dark:text-gray-300 hover:text-gray-500 dark:text-gray-50 md:block md:pb-2 whitespace-nowrap"
-                href="#pablo"
+                class="inline-block p-4 px-0 mr-0 text-sm font-bold text-left uppercase hover:text-solana-green text-gray-50 md:block md:pb-2 whitespace-nowrap"
+                href="/"
               >
                 Solana Calculators
               </a>
@@ -59,7 +59,7 @@ exports[`Sidebar component matches snapshot 1`] = `
           class="my-4 md:min-w-full"
         />
         <h6
-          class="block pt-1 pb-4 text-xs font-bold text-gray-600 no-underline uppercase dark:text-gray-50 md:min-w-full"
+          class="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full"
         >
           Calculators
         </h6>
@@ -70,7 +70,7 @@ exports[`Sidebar component matches snapshot 1`] = `
             class="items-center"
           >
             <a
-              class="text-xs uppercase py-3 font-bold block text-blue-500 hover:text-blue-600"
+              class="text-xs uppercase py-3 font-bold block text-solana-green hover:text-solana-green-hover -hover"
               href="/calculators/rent-calculator"
             >
               <i
@@ -84,7 +84,7 @@ exports[`Sidebar component matches snapshot 1`] = `
           class="my-4 md:min-w-full"
         />
         <h6
-          class="block pt-1 pb-4 text-xs font-bold text-gray-600 no-underline uppercase dark:text-gray-50 md:min-w-full"
+          class="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full"
         >
           About
         </h6>
@@ -95,13 +95,13 @@ exports[`Sidebar component matches snapshot 1`] = `
             class="items-center"
           >
             <a
-              class="text-xs uppercase py-3 font-bold block text-gray-600 hover:text-gray-500 dark:text-gray-50 hover:dark:text-gray-300"
+              class="text-xs uppercase py-3 font-bold block hover:text-solana-green text-gray-50"
               href="https://github.com/reecerose/solana-utilities"
               rel="noreferrer"
               target="_blank"
             >
               <i
-                class="fab fa-github mr-2 text-sm text-gray-600 dark:text-gray-50"
+                class="fab fa-github mr-2 text-sm text-gray-50"
               />
                GitHub
             </a>
@@ -111,11 +111,12 @@ exports[`Sidebar component matches snapshot 1`] = `
           class="my-4 md:min-w-full"
         />
         <h6
-          class="block pt-1 pb-4 text-xs font-bold text-gray-600 no-underline uppercase dark:text-gray-50 md:min-w-full"
+          class="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full"
         >
           Copyright © 2021 
           <br />
           <a
+            class="hover:text-solana-green "
             href="https://github.com/ReeceRose/"
             rel="noreferrer"
             target="_blank"
