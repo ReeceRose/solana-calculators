@@ -113,7 +113,7 @@ exports[`Sidebar component matches snapshot 1`] = `
         <h6
           class="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full"
         >
-          Copyright © 2021 
+          Copyright © 2022 
           <br />
           <a
             class="hover:text-solana-green "

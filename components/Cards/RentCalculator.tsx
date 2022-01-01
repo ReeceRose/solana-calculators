@@ -3,14 +3,17 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import Loading from '../LoadingSpinner';
 
 const RentCalculator: React.FC = () => {
-  const currency = 'USD';
+  const CURRENCY = 'USD';
+  // eslint-disable-next-line @typescript-eslint/no-loss-of-precision
+  const EPOCHS_PER_YEAR = 365.243660328700956;
 
   const [isLoading, setLoading] = useState(false);
   const [kilobytes, setKilobytes] = useState('0');
   const [solanaPrice, setSolanaPrice] = useState(0);
-  const [cost, setCost] = useState(0);
-  const [solCost, setSolCost] = useState(0);
-  const [currentCurrencyCost, setCurrentCurrencyCost] = useState(0);
+  const [perEpochLamports, setPerEpochLamports] = useState(0);
+  const [perEpochCost, setPerEpochCost] = useState(0);
+  const [rentExemptLamports, setRentExemptLamports] = useState(0);
+  const [rentExemptCost, setRentExemptCost] = useState(0);
 
   const getMinimumBalanceForRentExemption = async () => {
     if (kilobytes === '') return;
@@ -20,14 +23,14 @@ const RentCalculator: React.FC = () => {
       web3.clusterApiUrl(cluster as web3.Cluster),
       'confirmed'
     );
-    const minimum = await connection.getMinimumBalanceForRentExemption(
+    const rentExemptValue = await connection.getMinimumBalanceForRentExemption(
       parseInt(kilobytes)
     );
-    setCost(minimum);
-
-    const solCost = minimum / web3.LAMPORTS_PER_SOL;
-    setSolCost(solCost);
-    setCurrentCurrencyCost(solCost * solanaPrice);
+    const perEpochValue = rentExemptValue / EPOCHS_PER_YEAR;
+    setRentExemptLamports(rentExemptValue);
+    setPerEpochLamports(perEpochValue);
+    setRentExemptCost(rentExemptValue / web3.LAMPORTS_PER_SOL);
+    setPerEpochCost(perEpochValue / web3.LAMPORTS_PER_SOL);
     setLoading(false);
   };
 
@@ -36,7 +39,7 @@ const RentCalculator: React.FC = () => {
       try {
         const result = await fetch(
           'https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=' +
-            currency,
+            CURRENCY,
           { method: 'GET' }
         );
         const price = JSON.parse(await result.text());
@@ -62,7 +65,7 @@ const RentCalculator: React.FC = () => {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="relative flex flex-col w-full min-w-0 mb-6 break-words bg-gray-700 border-0 rounded-lg shadow-lg">
+      <div className="relative flex flex-col w-full min-w-0 break-words bg-gray-700 border-0 rounded-lg shadow-lg">
         <div className="px-6 py-6 mb-0 bg-gray-900 rounded-t">
           <div className="flex justify-between text-center">
             <h6 className="text-xl font-bold text-solana-green">
@@ -96,7 +99,7 @@ const RentCalculator: React.FC = () => {
             </span>
           </h6>
         </div>
-        <div className="flex-auto px-4 lg:px-10">
+        <div className="flex-auto px-4 mb-6 lg:px-10">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -118,18 +121,31 @@ const RentCalculator: React.FC = () => {
                   </label>
                   <input
                     type="number"
+                    max={10000}
                     className="w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-300 transition-all duration-150 ease-linear bg-white border-0 rounded shadow focus:outline-none focus:ring"
                     value={kilobytes}
                     onChange={handleKilobytesInput}
                   />
                 </div>
-                <p className="block mb-2 text-xs font-bold uppercase text-gray-50">
-                  Approximate cost:
-                  {/* TODO: better UI */}
-                  <br /> {cost} LAMPORTS
-                  <br /> {solCost} SOL
-                  <br /> {Math.round(currentCurrencyCost * 100) / 100} USD
-                </p>
+              </div>
+              {/* TODO: Imporve UI */}
+              <div className="w-full px-4 lg:w-6/12">
+                <span className="block text-xs font-bold uppercase text-gray-50">
+                  Approximate cost per epoch:
+                  <hr className="my-1 border-gray-50 border-b-1" />
+                  {perEpochLamports.toFixed(0)} LAMPORTS
+                  <br /> {perEpochCost !== 0 ? perEpochCost.toFixed(9) : 0} SOL
+                  <br /> ${(perEpochCost * solanaPrice).toFixed(5)} USD
+                  <br className="mb-2" />
+                  Approximate cost for rent-exempt:
+                  <hr className="my-1 border-gray-50 border-b-1" />
+                  {rentExemptLamports.toFixed(0)} LAMPORTS
+                  <br /> {rentExemptCost !== 0
+                    ? rentExemptCost.toFixed(9)
+                    : 0}{' '}
+                  SOL
+                  <br /> ${(rentExemptCost * solanaPrice).toFixed(5)} USD
+                </span>
               </div>
             </div>
           </form>
