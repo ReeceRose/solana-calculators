@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Calculators card component matches snapshot 1`] = `
+exports[`Converters card component matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="flex-auto px-4 lg:px-10"
+    class="flex-auto px-4 lg:px-10 "
   >
     <hr
       class="my-6 border-gray-50 border-b-1"
@@ -11,7 +11,7 @@ exports[`Calculators card component matches snapshot 1`] = `
     <h6
       class="text-sm font-bold uppercase text-gray-50"
     >
-      Calculators
+      Converters
     </h6>
   </div>
   <div
@@ -28,13 +28,13 @@ exports[`Calculators card component matches snapshot 1`] = `
       >
         <a
           class="text-solana-green hover:text-solana-green-hover"
-          href="/calculators/rent-calculator"
+          href="/converters/currency"
         >
-          Rent Calculator - 
+          Currency Converter - 
           <span
             class="text-gray-50"
           >
-             Calculate rent cost
+             Convert various currencies
           </span>
         </a>
       </p>

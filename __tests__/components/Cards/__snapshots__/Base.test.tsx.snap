@@ -3,10 +3,10 @@
 exports[`Base card component matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col w-full min-w-0 mb-12 break-words border-0 rounded-lg shadow-lg bg-gray-700"
+    class="relative flex flex-col w-full min-w-0 break-words bg-gray-700 border-0 rounded-lg shadow-lg"
   >
     <div
-      class="px-6 py-6 mb-0 bg-white rounded-t bg-gray-900"
+      class="p-6 bg-gray-900 rounded-t"
     >
       <div
         class="flex justify-between text-center"
@@ -19,6 +19,9 @@ exports[`Base card component matches snapshot 1`] = `
       </div>
     </div>
      
+    <div
+      class="mb-6"
+    />
   </div>
 </DocumentFragment>
 `;

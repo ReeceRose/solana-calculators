@@ -86,6 +86,36 @@ const Sidebar: React.FC = () => {
 
             <hr className="my-4 md:min-w-full" />
             <h6 className="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full">
+              Converters
+            </h6>
+
+            <ul className="flex flex-col list-none md:flex-col md:min-w-full">
+              <li className="items-center">
+                <Link href="/converters/currency">
+                  <a
+                    className={
+                      'text-xs uppercase py-3 font-bold block ' +
+                      (router.pathname.indexOf('/converters/currency') !== -1
+                        ? 'text-solana-green hover:text-solana-green-hover -hover'
+                        : 'text-solana-600 hover:text-solana-green  text-gray-50')
+                    }
+                  >
+                    <i
+                      className={
+                        'fas fa-exchange-alt mr-2 text-sm ' +
+                        (router.pathname.indexOf('/converters/currency') !== -1
+                          ? 'opacity-75'
+                          : 'text-gray-50')
+                      }
+                    ></i>{' '}
+                    Currency Converter
+                  </a>
+                </Link>
+              </li>
+            </ul>
+
+            <hr className="my-4 md:min-w-full" />
+            <h6 className="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full">
               About
             </h6>
 

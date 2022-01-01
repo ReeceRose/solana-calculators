@@ -1,6 +1,5 @@
-import BaseCard from '../components/Cards/Base';
-import CalculatursCard from '../components/Cards/Calculators';
-import ConvertersCard from '../components/Cards/Converters';
+import BaseCard from '../../components/Cards/Base';
+import ConvertersCard from '../../components/Cards/Converters';
 
 const Index: React.FC = () => {
   return (
@@ -9,7 +8,6 @@ const Index: React.FC = () => {
         <div className="flex flex-wrap">
           <div className="w-full px-4 mx-auto lg:w-10/12">
             <BaseCard>
-              <CalculatursCard />
               <ConvertersCard />
             </BaseCard>
           </div>

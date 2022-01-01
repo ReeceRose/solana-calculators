@@ -86,6 +86,31 @@ exports[`Sidebar component matches snapshot 1`] = `
         <h6
           class="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full"
         >
+          Converters
+        </h6>
+        <ul
+          class="flex flex-col list-none md:flex-col md:min-w-full"
+        >
+          <li
+            class="items-center"
+          >
+            <a
+              class="text-xs uppercase py-3 font-bold block text-solana-600 hover:text-solana-green  text-gray-50"
+              href="/converters/currency"
+            >
+              <i
+                class="fas fa-exchange-alt mr-2 text-sm text-gray-50"
+              />
+               Currency Converter
+            </a>
+          </li>
+        </ul>
+        <hr
+          class="my-4 md:min-w-full"
+        />
+        <h6
+          class="block pt-1 pb-4 text-xs font-bold no-underline uppercase text-gray-50 md:min-w-full"
+        >
           About
         </h6>
         <ul
